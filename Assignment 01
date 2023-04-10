@@ -1,0 +1,64 @@
+public class Student {
+    private int studentNumber;
+    private String name;
+    private String course;
+    private int year;
+    
+    public Student(int studentNumber, String name, String course, int year) {
+        this.studentNumber = studentNumber;
+        this.name = name;
+        this.course = course;
+        this.year = year;
+    }
+    
+    public void getStudentDetails() {
+        System.out.println("Student Number: " + studentNumber);
+        System.out.println("Name: " + name);
+        System.out.println("Course: " + course);
+        System.out.println("Year: " + year);
+    }
+    
+    public void showStudentDetails() {
+        System.out.println("Student Details:");
+        getStudentDetails();
+    }
+}
+
+public class Item {
+    private int itemNumber;
+    private String itemDescription;
+    private double unitPrice;
+    private int quantityOnHand;
+    
+    public Item(int itemNumber, String itemDescription, double unitPrice, int quantityOnHand) {
+        this.itemNumber = itemNumber;
+        this.itemDescription = itemDescription;
+        this.unitPrice = unitPrice;
+        this.quantityOnHand = quantityOnHand;
+    }
+    
+    public void displayItemInfo() {
+        System.out.println("Item Number: " + itemNumber);
+        System.out.println("Item Description: " + itemDescription);
+        System.out.println("Unit Price: " + unitPrice);
+        System.out.println("Quantity on Hand: " + quantityOnHand);
+    }
+    
+    public double computeInventory() {
+        return quantityOnHand * unitPrice;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a student object and display its details
+        Student student = new Student(2022107582, "Rezelee Enoc", "Information Technology", 1);
+        student.showStudentDetails();
+        
+        // Create an item object and display its details and inventory
+        Item item = new Item(1001, "IT Textbook", 50.0, 10);
+        System.out.println("Item Information:");
+        item.displayItemInfo();
+        System.out.println("Inventory: " + item.computeInventory());
+    }
+}
